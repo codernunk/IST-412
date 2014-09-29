@@ -12,6 +12,11 @@ package atm;
  */
 public class MainScreen extends javax.swing.JFrame {
 
+    public static final String TRANSACTION_WITHDRAW = "Withdraw";
+    public static final String TRANSACTION_DEPOSIT = "Deposit";
+    public static final String TRANSACTION_INQUIRY = "Inquiry";
+    public static final String TRANSACTION_TRANSFER = "Transfer";
+    
     /**
      * Creates new form ATMMachine
      */
@@ -19,6 +24,25 @@ public class MainScreen extends javax.swing.JFrame {
         initComponents();
     }
 
+    private void ShowTransactionScreen(String actionType)
+    {
+        switch (actionType)
+        {
+            case TRANSACTION_WITHDRAW:
+            case TRANSACTION_DEPOSIT:
+                
+                new SelectAccountScreen(actionType).setVisible(true);
+                
+                break;
+            case TRANSACTION_INQUIRY:
+                break;
+            case TRANSACTION_TRANSFER:
+                break;
+            default:
+                break;
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -146,22 +170,27 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void jbtWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtWithdrawActionPerformed
         // TODO add your handling code here:
+        ShowTransactionScreen(TRANSACTION_WITHDRAW);
     }//GEN-LAST:event_jbtWithdrawActionPerformed
 
     private void jbtDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtDepositActionPerformed
         // TODO add your handling code here:
+        ShowTransactionScreen(TRANSACTION_DEPOSIT);
     }//GEN-LAST:event_jbtDepositActionPerformed
 
     private void jbtTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtTransferActionPerformed
         // TODO add your handling code here:
+        ShowTransactionScreen(TRANSACTION_TRANSFER);
     }//GEN-LAST:event_jbtTransferActionPerformed
 
     private void jbtInquiryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtInquiryActionPerformed
         // TODO add your handling code here:
+        ShowTransactionScreen(TRANSACTION_INQUIRY);
     }//GEN-LAST:event_jbtInquiryActionPerformed
 
     private void jbtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtExitActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_jbtExitActionPerformed
 
     /**

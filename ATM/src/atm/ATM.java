@@ -7,16 +7,10 @@
 package atm;
 
 /**
- *
+ * Represents the actual base functionality for the ATM.
  * @author Jesse
  */
 public class ATM {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
     
 }
