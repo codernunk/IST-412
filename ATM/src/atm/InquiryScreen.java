@@ -6,13 +6,11 @@
 
 package atm;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Jesse
  */
-public class TransactionScreen extends javax.swing.JFrame {
+public class InquiryScreen extends javax.swing.JFrame {
 
     private String account;
     private String action;
@@ -20,7 +18,7 @@ public class TransactionScreen extends javax.swing.JFrame {
     /**
      * Creates new form TransactionScreen
      */
-    public TransactionScreen(String acct, String act) {
+    public InquiryScreen(String acct, String act) {
         initComponents();
         
         account = acct;
@@ -31,19 +29,8 @@ public class TransactionScreen extends javax.swing.JFrame {
     
     private void setCommandText()
     {
-        switch (action)
-        {
-            case ATM.TRANSACTION_DEPOSIT:
-                jlAction.setText("Please enter the amount you want to deposit into your "+account+" account:");
-                break;
-            case ATM.TRANSACTION_WITHDRAW:
-                jlAction.setText("Please enter the amount you want to withdraw from your "+account+" account:");
-                break;
-            case ATM.TRANSACTION_TRANSFER:                
-                String otherAccount = account.equals(ATM.ACCOUNT_CHECKING) ? ATM.ACCOUNT_SAVINGS : ATM.ACCOUNT_CHECKING;                
-                jlAction.setText("Please enter the amount you want to transfer to your "+otherAccount+" account:");
-                break;
-        }
+        jlAction.setText("Your current balance for your "+account+" account is:");
+        
     }
 
     /**
@@ -57,8 +44,6 @@ public class TransactionScreen extends javax.swing.JFrame {
 
         jlTitle = new javax.swing.JLabel();
         jlAction = new javax.swing.JLabel();
-        jtfAmount = new javax.swing.JTextField();
-        jbtCancel = new javax.swing.JButton();
         jbtOk = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
@@ -69,22 +54,7 @@ public class TransactionScreen extends javax.swing.JFrame {
         jlTitle.setText("ATM");
 
         jlAction.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jlAction.setText("Please enter the amount you want to deposit:");
-
-        jtfAmount.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jtfAmount.setText("100");
-        jtfAmount.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfAmountActionPerformed(evt);
-            }
-        });
-
-        jbtCancel.setText("Cancel");
-        jbtCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtCancelActionPerformed(evt);
-            }
-        });
+        jlAction.setText("Your current balance for your ___ account is:");
 
         jbtOk.setText("Ok");
         jbtOk.addActionListener(new java.awt.event.ActionListener() {
@@ -109,19 +79,16 @@ public class TransactionScreen extends javax.swing.JFrame {
                                 .addComponent(jlTitle))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jlAction))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel3)
-                                .addGap(6, 6, 6)
-                                .addComponent(jtfAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 76, Short.MAX_VALUE))
+                                .addComponent(jlAction)))
+                        .addGap(0, 213, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jbtCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jbtOk, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(192, 192, 192)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,41 +98,24 @@ public class TransactionScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlAction)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtOk, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(jbtOk, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtfAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfAmountActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtfAmountActionPerformed
-
-    private void jbtCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtCancelActionPerformed
-        this.dispose();
-        new MainScreen().setVisible(true);
-    }//GEN-LAST:event_jbtCancelActionPerformed
-
     private void jbtOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtOkActionPerformed
-        
-        JOptionPane.showMessageDialog(jtfAmount, "Your transaction was completed successfully!");
         this.dispose();
         new MainScreen().setVisible(true);
     }//GEN-LAST:event_jbtOkActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JButton jbtCancel;
     private javax.swing.JButton jbtOk;
     private javax.swing.JLabel jlAction;
     private javax.swing.JLabel jlTitle;
-    private javax.swing.JTextField jtfAmount;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,11 +11,6 @@ package atm;
  * @author Jesse
  */
 public class MainScreen extends javax.swing.JFrame {
-
-    public static final String TRANSACTION_WITHDRAW = "Withdraw";
-    public static final String TRANSACTION_DEPOSIT = "Deposit";
-    public static final String TRANSACTION_INQUIRY = "Inquiry";
-    public static final String TRANSACTION_TRANSFER = "Transfer";
     
     /**
      * Creates new form ATMMachine
@@ -28,15 +23,12 @@ public class MainScreen extends javax.swing.JFrame {
     {
         switch (actionType)
         {
-            case TRANSACTION_WITHDRAW:
-            case TRANSACTION_DEPOSIT:
-                
-                new SelectAccountScreen(actionType).setVisible(true);
-                
-                break;
-            case TRANSACTION_INQUIRY:
-                break;
-            case TRANSACTION_TRANSFER:
+            case ATM.TRANSACTION_WITHDRAW:
+            case ATM.TRANSACTION_DEPOSIT:
+            case ATM.TRANSACTION_INQUIRY: 
+            case ATM.TRANSACTION_TRANSFER:   
+                this.dispose();
+                new SelectAccountScreen(actionType).setVisible(true);            
                 break;
             default:
                 break;
@@ -170,22 +162,22 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void jbtWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtWithdrawActionPerformed
         // TODO add your handling code here:
-        ShowTransactionScreen(TRANSACTION_WITHDRAW);
+        ShowTransactionScreen(ATM.TRANSACTION_WITHDRAW);
     }//GEN-LAST:event_jbtWithdrawActionPerformed
 
     private void jbtDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtDepositActionPerformed
         // TODO add your handling code here:
-        ShowTransactionScreen(TRANSACTION_DEPOSIT);
+        ShowTransactionScreen(ATM.TRANSACTION_DEPOSIT);
     }//GEN-LAST:event_jbtDepositActionPerformed
 
     private void jbtTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtTransferActionPerformed
         // TODO add your handling code here:
-        ShowTransactionScreen(TRANSACTION_TRANSFER);
+        ShowTransactionScreen(ATM.TRANSACTION_TRANSFER);
     }//GEN-LAST:event_jbtTransferActionPerformed
 
     private void jbtInquiryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtInquiryActionPerformed
         // TODO add your handling code here:
-        ShowTransactionScreen(TRANSACTION_INQUIRY);
+        ShowTransactionScreen(ATM.TRANSACTION_INQUIRY);
     }//GEN-LAST:event_jbtInquiryActionPerformed
 
     private void jbtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtExitActionPerformed
@@ -193,40 +185,6 @@ public class MainScreen extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jbtExitActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainScreen().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

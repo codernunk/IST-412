@@ -21,6 +21,32 @@ public class SelectAccountScreen extends javax.swing.JFrame {
         initComponents();
         
         action = actionType;
+        
+        if (action.equals(ATM.TRANSACTION_TRANSFER))
+        {
+            jlAction.setText("Please select an account to transfer FROM:");
+        }
+    }
+    
+    /**
+     * Choose which screen to redirect to based on the user's choice of action.
+     * @param acct 
+     */
+    private void chooseAction(String acct)
+    {
+        switch (action)
+        {
+            case ATM.TRANSACTION_DEPOSIT:
+            case ATM.TRANSACTION_WITHDRAW:
+            case ATM.TRANSACTION_TRANSFER:
+                this.dispose();
+                new TransactionScreen(acct,action).setVisible(true);  
+                break;
+            case ATM.TRANSACTION_INQUIRY:
+                this.dispose();
+                new InquiryScreen(acct,action).setVisible(true);  
+                break;
+        }
     }
 
     /**
@@ -33,7 +59,7 @@ public class SelectAccountScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jlAction = new javax.swing.JLabel();
         jbtChecking = new javax.swing.JButton();
         jbtSavings = new javax.swing.JButton();
         jbtCancel = new javax.swing.JButton();
@@ -44,8 +70,8 @@ public class SelectAccountScreen extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 102, 0));
         jLabel1.setText("ATM");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Please select an account:");
+        jlAction.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jlAction.setText("Please select an account:");
 
         jbtChecking.setBackground(new java.awt.Color(0, 153, 51));
         jbtChecking.setText("Checking");
@@ -86,7 +112,7 @@ public class SelectAccountScreen extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                         .addComponent(jbtSavings, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(jlAction)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -99,7 +125,7 @@ public class SelectAccountScreen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(jlAction)
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtChecking, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -113,25 +139,24 @@ public class SelectAccountScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtCheckingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtCheckingActionPerformed
-        this.dispose();
-        new TransactionScreen("Checking",action).setVisible(true);
+        chooseAction("Checking");
     }//GEN-LAST:event_jbtCheckingActionPerformed
 
     private void jbtSavingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtSavingsActionPerformed
-        this.dispose();
-        new TransactionScreen("Savings",action).setVisible(true);
+        chooseAction("Savings");
     }//GEN-LAST:event_jbtSavingsActionPerformed
 
     private void jbtCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtCancelActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        new MainScreen().setVisible(true);
     }//GEN-LAST:event_jbtCancelActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jbtCancel;
     private javax.swing.JButton jbtChecking;
     private javax.swing.JButton jbtSavings;
+    private javax.swing.JLabel jlAction;
     // End of variables declaration//GEN-END:variables
 }
