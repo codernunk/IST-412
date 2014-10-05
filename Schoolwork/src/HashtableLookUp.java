@@ -34,7 +34,7 @@ public class HashtableLookUp extends javax.swing.JFrame {
         try{
             mainSocket = new Socket("localhost",1024);
             socketInput = mainSocket.getInputStream();
-            mainSocket.getOutputStream();
+            socketOutput = mainSocket.getOutputStream();
         }catch (Exception e){
             
         }
