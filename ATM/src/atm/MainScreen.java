@@ -19,7 +19,7 @@ public class MainScreen extends javax.swing.JFrame {
         initComponents();
     }
 
-    private void ShowTransactionScreen(String actionType)
+    private void showTransactionScreen(String actionType)
     {
         switch (actionType)
         {
@@ -44,22 +44,22 @@ public class MainScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jlTitle = new javax.swing.JLabel();
         jbtWithdraw = new javax.swing.JButton();
         jbtDeposit = new javax.swing.JButton();
         jbtTransfer = new javax.swing.JButton();
         jbtInquiry = new javax.swing.JButton();
         jbtExit = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jlOptions = new javax.swing.JLabel();
+        jlWelcome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ATM");
         setBackground(new java.awt.Color(153, 255, 153));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel1.setText("ATM");
+        jlTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jlTitle.setForeground(new java.awt.Color(0, 102, 0));
+        jlTitle.setText("ATM");
 
         jbtWithdraw.setBackground(new java.awt.Color(0, 153, 51));
         jbtWithdraw.setText("Withdraw");
@@ -100,10 +100,10 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Please select an option:");
+        jlOptions.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jlOptions.setText("Please select an option:");
 
-        jLabel3.setText("Welcome, <username>!");
+        jlWelcome.setText("Welcome, <username>!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,23 +127,23 @@ public class MainScreen extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(249, 249, 249)
-                        .addComponent(jLabel1))
+                        .addComponent(jlTitle))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))))
+                            .addComponent(jlWelcome)
+                            .addComponent(jlOptions))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jlTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(jlWelcome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addComponent(jlOptions)
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtDeposit, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,22 +162,22 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void jbtWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtWithdrawActionPerformed
         // TODO add your handling code here:
-        ShowTransactionScreen(ATM.TRANSACTION_WITHDRAW);
+        showTransactionScreen(ATM.TRANSACTION_WITHDRAW);
     }//GEN-LAST:event_jbtWithdrawActionPerformed
 
     private void jbtDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtDepositActionPerformed
         // TODO add your handling code here:
-        ShowTransactionScreen(ATM.TRANSACTION_DEPOSIT);
+        showTransactionScreen(ATM.TRANSACTION_DEPOSIT);
     }//GEN-LAST:event_jbtDepositActionPerformed
 
     private void jbtTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtTransferActionPerformed
         // TODO add your handling code here:
-        ShowTransactionScreen(ATM.TRANSACTION_TRANSFER);
+        showTransactionScreen(ATM.TRANSACTION_TRANSFER);
     }//GEN-LAST:event_jbtTransferActionPerformed
 
     private void jbtInquiryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtInquiryActionPerformed
         // TODO add your handling code here:
-        ShowTransactionScreen(ATM.TRANSACTION_INQUIRY);
+        showTransactionScreen(ATM.TRANSACTION_INQUIRY);
     }//GEN-LAST:event_jbtInquiryActionPerformed
 
     private void jbtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtExitActionPerformed
@@ -187,13 +187,13 @@ public class MainScreen extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbtDeposit;
     private javax.swing.JButton jbtExit;
     private javax.swing.JButton jbtInquiry;
     private javax.swing.JButton jbtTransfer;
     private javax.swing.JButton jbtWithdraw;
+    private javax.swing.JLabel jlOptions;
+    private javax.swing.JLabel jlTitle;
+    private javax.swing.JLabel jlWelcome;
     // End of variables declaration//GEN-END:variables
 }

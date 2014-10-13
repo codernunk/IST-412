@@ -60,7 +60,7 @@ public class TransactionScreen extends javax.swing.JFrame {
         jtfAmount = new javax.swing.JTextField();
         jbtCancel = new javax.swing.JButton();
         jbtOk = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        jlDollarSign = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,8 +93,8 @@ public class TransactionScreen extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel3.setText("$");
+        jlDollarSign.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jlDollarSign.setText("$");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,7 +112,7 @@ public class TransactionScreen extends javax.swing.JFrame {
                                 .addComponent(jlAction))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel3)
+                                .addComponent(jlDollarSign)
                                 .addGap(6, 6, 6)
                                 .addComponent(jtfAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 76, Short.MAX_VALUE))
@@ -133,7 +133,7 @@ public class TransactionScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jlDollarSign))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -161,10 +161,10 @@ public class TransactionScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtOkActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbtCancel;
     private javax.swing.JButton jbtOk;
     private javax.swing.JLabel jlAction;
+    private javax.swing.JLabel jlDollarSign;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JTextField jtfAmount;
     // End of variables declaration//GEN-END:variables

@@ -1,0 +1,4 @@
+Sh1=Shirts*200*  
+Tie=Ties*1200*  
+Scsb=Blue Socks*1500* 
+Scsy=Yellow Socks*200* 

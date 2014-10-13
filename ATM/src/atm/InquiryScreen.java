@@ -45,7 +45,7 @@ public class InquiryScreen extends javax.swing.JFrame {
         jlTitle = new javax.swing.JLabel();
         jlAction = new javax.swing.JLabel();
         jbtOk = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        jlAmount = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,8 +63,8 @@ public class InquiryScreen extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel3.setText("$");
+        jlAmount.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jlAmount.setText("$");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,7 +87,7 @@ public class InquiryScreen extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(192, 192, 192)
-                .addComponent(jLabel3)
+                .addComponent(jlAmount)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -98,7 +98,7 @@ public class InquiryScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlAction)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addComponent(jlAmount)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(jbtOk, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -113,9 +113,9 @@ public class InquiryScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtOkActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbtOk;
     private javax.swing.JLabel jlAction;
+    private javax.swing.JLabel jlAmount;
     private javax.swing.JLabel jlTitle;
     // End of variables declaration//GEN-END:variables
 }

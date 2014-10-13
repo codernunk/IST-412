@@ -58,7 +58,7 @@ public class SelectAccountScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jlTitle = new javax.swing.JLabel();
         jlAction = new javax.swing.JLabel();
         jbtChecking = new javax.swing.JButton();
         jbtSavings = new javax.swing.JButton();
@@ -66,9 +66,9 @@ public class SelectAccountScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel1.setText("ATM");
+        jlTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jlTitle.setForeground(new java.awt.Color(0, 102, 0));
+        jlTitle.setText("ATM");
 
         jlAction.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlAction.setText("Please select an account:");
@@ -102,7 +102,7 @@ public class SelectAccountScreen extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(193, 193, 193)
-                .addComponent(jLabel1)
+                .addComponent(jlTitle)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -123,7 +123,7 @@ public class SelectAccountScreen extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jlTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlAction)
                 .addGap(45, 45, 45)
@@ -153,10 +153,10 @@ public class SelectAccountScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtCancelActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jbtCancel;
     private javax.swing.JButton jbtChecking;
     private javax.swing.JButton jbtSavings;
     private javax.swing.JLabel jlAction;
+    private javax.swing.JLabel jlTitle;
     // End of variables declaration//GEN-END:variables
 }
