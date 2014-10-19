@@ -1,0 +1,1 @@
+package Eserver;import java.util.*;public class ProductCollection{private Vector holder;public ProductCollection(){   holder = new Vector();}public void addProduct(Product pr){   holder.addElement(pr);}public Enumeration elements(){   return holder.elements();}}
